@@ -1,0 +1,14 @@
+---
+export interface Props {
+    id: string,
+    class?: string
+}
+const { class: className, id } = Astro.props;
+---
+
+<section
+    id={id}
+    class={`${className} w-full pb-24 pt-5`}
+>
+    <slot />
+</section>
