@@ -1,0 +1,52 @@
+---
+import AstroIcon from "./icons/AstroIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+---
+
+<footer
+    class="shadow bg-transparent text-white/50 w-full xl:w-[1120px] mx-auto p-2"
+>
+    <div
+        class="rounded-lg backdrop-blur-lg w-full mx-auto max-w-screen-xl p-2 flex flex-col items-center justify-between"
+    >
+        <div class="flex justify-between items-center w-full mb-4 pt-2">
+            <span class="text-sm sm:text-center">
+                Inspirado en
+                <a
+                    href="https://midu.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition hover:underline text-red-300"
+                >
+                    midu.dev
+                </a>
+            </span>
+            <ul class="flex text-sm">
+                <li>
+                    <a href="#sobre-mi" class="hover:underline me-4 md:me-6"
+                        >Sobre mí</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="flex items-center w-full gap-3">
+            <span class="text-sm mb-2"> Powered by:</span>
+            <div class="flex items-center justify-center gap-x-4">
+                <a
+                    target="_blank"
+                    href="https://astro.build/"
+                    rel="noopener noreferrer"
+                >
+                    <AstroIcon class="size-6" />
+                </a>
+                <a
+                    target="_blank"
+                    href="https://tailwindcss.com/"
+                    rel="noopener noreferrer"
+                >
+                    <TailwindIcon class="size-6 mb-2" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
