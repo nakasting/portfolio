@@ -2,13 +2,15 @@
 import About from "../components/About.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import SubTitle from '../components/SubTitle.astro'
-import CodeIcon from '../components/icons/CodeIcon.astro'
+import SubTitle from "../components/SubTitle.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import WorkIcon from "../components/icons/WorkIcon.astro";
 import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout title="Portfolio de Mikell Bobadilla">
-    <main class="p-4">
+    <main class="p-4 overflow-y-auto">
         <div class="w-full max-w-2xl mx-auto">
             <SectionContainer
                 id="sobre-mi"
@@ -16,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
             >
                 <About />
             </SectionContainer>
-            
+
             <SectionContainer id="proyectos">
                 <SubTitle>
                     <CodeIcon class="size-9" />
@@ -24,10 +26,17 @@ import Layout from "../layouts/Layout.astro";
                 </SubTitle>
 
                 <Projects />
+            </SectionContainer>
 
+            <SectionContainer id="experiencia">
+                <SubTitle>
+                    <WorkIcon class="size-9" />
+                    Experiencia Laboral
+                </SubTitle>
+
+                <Experience />
+                
             </SectionContainer>
         </div>
-
-
     </main>
 </Layout>
