@@ -1,6 +1,7 @@
 ---
 import { TAGS } from "../utils/tags";
-
+import BrowserIcon from "./icons/BrowserIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
 const {
     REACT,
     REACT_ROUTER,
@@ -18,23 +19,24 @@ const PROJECTS = [
             "Applicación que permite buscar peliculas y obtener sus detalles. Esta app se conecta a la API de OMDb mostrando resultados por su título.",
         link: "https://reactmovie-2gm.pages.dev/?s=Avengers",
         github: "https://github.com/mikellbobadilla/ReactMovie",
-        poster: "",
+        poster: "/projects/react-movie.webp",
         tags: [REACT, REACT_ROUTER, MATERIAL_UI, TYPESCRIPT],
     },
     {
         title: "Blogging Platform",
         description:
             "Desarrollo de una API RESTful para la gestión de blogs, implementada con las mejores prácticas actuales y estándares de la industria. La API permite crear, leer, actualizar y eliminar publicaciones, gestionando usuarios, comentarios y categorías, asegurando seguridad, escalabilidad y fácil mantenimiento.",
-        link: "https://github.com/mikellbobadilla/Bloggin-Platform",
+        link: "",
         github: "https://github.com/mikellbobadilla/Bloggin-Platform",
-        poster: "",
+        poster: "/projects/blogging-platform.webp",
         tags: [JAVA, SPRING, POSTGRE_SQL],
     },
 ];
 ---
+
 {
-    PROJECTS.map(({ title, description, tags, poster }) => (
-        <article>
+    PROJECTS.map(({ title, description, tags, poster, github, link }) => (
+        <article class="mb-6">
             <h3 class="text-2xl text-balance font-semibold text-yellow-200/80 mb-2">
                 {title}
             </h3>
@@ -42,18 +44,46 @@ const PROJECTS = [
             <ul class="flex flex-wrap gap-2 flex-row mb-4">
                 {tags.map((tag) => (
                     <span
-                        class={`flex gap-x-1 rounded-full text-xs  ${tag.class} py-1 pl-2 pr-4`}
+                        class={`flex items-center gap-x-1 rounded-sm text-xs  ${tag.class} py-1 pl-2 pr-4`}
                     >
-                        <tag.icon class="size-4" />
+                        <tag.icon class="size-3" />
                         <li>{tag.name}</li>
                     </span>
                 ))}
             </ul>
             <img
-                class="rounded shadow-2xl shadow-white/5"
+                class="rounded shadow-2xl shadow-white/10"
                 src={poster}
                 alt={`Captura de pantalla del proyecto ${poster}`}
+                loading="lazy"
             />
+
+            <div class="my-4">
+                <nav class="flex justify-around">
+                    {link.length !== 0 ? (
+                        <a
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href={link}
+                            class="flex items-center gap-x-2 py-1 px-3 rounded-sm bg-zinc-900 transition hover:bg-zinc-700"
+                        >
+                            <BrowserIcon class="size-4" />
+                            Demo
+                        </a>
+                    ) : (
+                        <> </>
+                    )}
+                    <a
+                        rel="noopener noreferrer"
+                        href={github}
+                        target="_blank"
+                        class="flex items-center gap-x-2 py-1 px-3 rounded-sm bg-zinc-900 transition hover:bg-zinc-700"
+                    >
+                        <GitHubIcon class="size-4" />
+                        Repo
+                    </a>
+                </nav>
+            </div>
         </article>
     ))
 }
