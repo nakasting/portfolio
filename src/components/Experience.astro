@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCIE = [
+    {
+        date: "Julio 2023 - Septiembre 2023",
+        title: "Desarrollador Full Stack Java",
+        description:
+            "Desarrollo de un sistema integral para la gestión de productos, incluyendo el control de inventario, administración de usuarios, elaboración de presupuestos y generación de balances mensuales.",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCIE.map((exp) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...exp} />
+            </li>
+        ))
+    }
+</ol>
