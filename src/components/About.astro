@@ -1,42 +1,46 @@
 ---
+import Image from "astro/components/Image.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import MailIcon from "./icons/MailIcon.astro";
 import SocialPeel from "./SocialPeel.astro";
 ---
 
-<img
-    class="size-20 rounded-full mb-4"
-    width="90"
-    src="/profile/mikell-photo.jpg"
-    alt="Foto de Mikell Bobadilla"
+<Image
+  class="size-20 rounded-full mb-4"
+  width={90}
+  height={90}
+  src="/profile/mikell-photo.webp"
+  alt="Foto de Mikell Bobadilla"
+  loading="eager"
+  priority={true}
 />
 <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-6 lg:pb-10">
-    Hola, soy Mikell
+  Hola, soy Mikell
 </h1>
 
 <h2 class="text-xl lg:text-2xl text-pretty max-w-[700px]">
-    <span class="text-blue-200">Desarrollador</span>
-    <span class="text-yellow-200"> Web y Back-End.</span>
-    <span class="text-red-200"> De Buenos Aires, Argentina.</span>
-    <span class="text-zinc-300">
-        Especializado en crear aplicaciones únicas.
-    </span>
+  <span class="text-blue-200">Desarrollador</span>
+  <span class="text-yellow-200"> Web y Back-End.</span>
+  <span class="text-red-200"> De Buenos Aires, Argentina.</span>
+  <span class="text-zinc-300">
+    Especializado en crear aplicaciones únicas.
+  </span>
 </h2>
 
 <nav class="flex items-center flex-wrap mt-6 gap-4">
-    <SocialPeel  href="https://www.linkedin.com/in/mikellbobadilla/">
-        <LinkedInIcon class="size-4" />
-        LinkedIn
-    </SocialPeel>
+  <SocialPeel href="https://www.linkedin.com/in/mikellbobadilla/">
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPeel>
 
-    <SocialPeel href="https://github.com/mikellbobadilla">
-        <GitHubIcon class="size-4" />
-        GitHub
-    </SocialPeel>
+  <SocialPeel href="https://github.com/mikellbobadilla">
+    <GitHubIcon class="size-4" />
+    GitHub
+  </SocialPeel>
 
-    <SocialPeel href="mailto:mikellbobadilla@gmail.com">
-        <MailIcon class="size-4 " />
-        Email
-    </SocialPeel>
+  <SocialPeel href="mailto:mikellbobadilla@gmail.com">
+    <MailIcon class="size-4" />
+    Email
+  </SocialPeel>
 </nav>

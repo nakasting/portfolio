@@ -1,4 +1,5 @@
 ---
+import Image from "astro/components/Image.astro";
 import { TAGS } from "../utils/tags";
 import BrowserIcon from "./icons/BrowserIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
@@ -51,7 +52,7 @@ const PROJECTS = [
                     </span>
                 ))}
             </ul>
-            <img
+            <Image
                 class="rounded shadow-2xl shadow-white/5 aspect-video"
                 src={poster}
                 alt={`Captura de pantalla del proyecto ${poster}`}
